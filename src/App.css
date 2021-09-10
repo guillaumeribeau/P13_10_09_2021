@@ -15,13 +15,12 @@ body {
 
 .main {
   flex: 1;
-  
 }
 
 .bg-dark {
   background-color: #12002b;
   height: 100vh;
-  padding-top:50px;
+  padding-top: 50px;
 }
 
 .sr-only {
@@ -105,6 +104,37 @@ body {
 
 .icon-person {
   padding-right: 5px;
+}
+
+/* css modification que moi j'ai apportées  */
+
+.welcome_name {
+  color: white;
+}
+
+.container_input_name {
+  margin-bottom: 15px;
+}
+
+.container_button_name {
+  margin-bottom: 40px;
+}
+
+.input_name {
+  padding: 10px;
+  margin-right: 15px;
+}
+
+.submit_edit_button {
+  width: 130px;
+  height: 40px;
+  margin-right: 15px;
+  background-color: white;
+  text-align: center;
+  border: rgb(150, 131, 150) 2px solid;
+  color: rgb(150, 131, 150);
+  font-weight: bolder;
+  cursor: pointer;
 }
 
 @media (min-width: 920px) {
@@ -234,7 +264,7 @@ body {
   box-sizing: border-box;
   text-align: left;
   margin-bottom: 2rem;
- }
+}
 
 .account-amount {
   margin: 0;
