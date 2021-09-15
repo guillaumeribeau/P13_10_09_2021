@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Redirect } from "react-router-dom";
 
 
 export const SIGNIN_USER = "SIGNIN_USER";
@@ -16,8 +17,10 @@ export const signInUser = (userMail, password) => {
       },
     })
       .then((response) => {
-       console.log(response)
-      dispatch({ type: SIGNIN_USER, payload:response.data});
+    
+      dispatch({ type: SIGNIN_USER, payload:response.data.body.token});
+       
+
       })
       .catch((err) => console.log(err));
   };
@@ -37,8 +40,10 @@ export const accessProfilePage = (token) => {
      }
     })
       .then((response) => {
-       dispatch({ type: ACCES_PROFIL, payload: response.data});
-       console.log(response)
+       
+        dispatch({ type: ACCES_PROFIL, payload: response.data});
+        
+       
       })
       .catch((err) => console.log(err));
   };

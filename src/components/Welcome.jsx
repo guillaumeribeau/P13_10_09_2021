@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const Welcome = () => {
   const [editName, setEditName] = useState(false);
-
+  const displayUserInfos= useSelector((state) => state.signInReducer);
+  const dispatch = useDispatch()
+  console.log(displayUserInfos)
   return (
     <>
       {editName ? (
@@ -28,7 +31,7 @@ const Welcome = () => {
           <h1>
             Welcome back
             <br />
-            Tony Jarvis!
+            {displayUserInfos.body.name}
           </h1>
           <button class="edit-button" onClick={() => setEditName(!editName)}>
             Edit Name
