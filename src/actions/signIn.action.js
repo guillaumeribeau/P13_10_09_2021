@@ -1,20 +1,45 @@
-import axios from 'axios'
+import axios from "axios";
 
 
 export const SIGNIN_USER = "SIGNIN_USER";
+export const ACCES_PROFIL = "ACCES_PROFIL";
 
 
-
-
-export const signInUser = () => {
-    return (dispatch) => {
-      return axios
-        .post(`http://localhost:3001/api/v1/user/signup`)
-        .then((res) => {
-          
-          dispatch({ type: SIGNIN_USER, payload: res.data.data });
-          console.log(res.data.data)
-        })
-        .catch((err) => console.log(err));
-    };
+export const signInUser = (userMail, password) => {
+  return (dispatch) => {
+    return axios({
+      method: "post",
+      url: `http://localhost:3001/api/v1/user/login`,
+      data: {
+        email: userMail,
+        password: password,
+      },
+    })
+      .then((response) => {
+       console.log(response)
+      dispatch({ type: SIGNIN_USER, payload:response.data});
+      })
+      .catch((err) => console.log(err));
   };
+};
+
+
+
+
+
+export const accessProfilePage = (token) => {
+  return (dispatch) => {
+    return axios({
+      method: "post",
+      url: `http://localhost:3001/api/v1/user/profile`,
+     headers: {
+       Authorization: `Bearer ${token}`
+     }
+    })
+      .then((response) => {
+       dispatch({ type: ACCES_PROFIL, payload: response.data});
+       console.log(response)
+      })
+      .catch((err) => console.log(err));
+  };
+};

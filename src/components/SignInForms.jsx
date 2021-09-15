@@ -2,18 +2,27 @@ import React from "react";
 import { useState } from "react";
 import { PersonCircle } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { signInUser } from "../actions/signIn.action";
+import { accessProfilePage, signInUser } from "../actions/signIn.action";
+import signInReducer from "../reducers/signIn.reducer";
 
 const SignInForms = () => {
-  const [user, setUser] = useState("");
+  const [userMail, setUserMail] = useState("");
   const [password, setPassword] = useState("");
   const userLogin = useSelector(state => state.signInReducer)
   const dispatch = useDispatch();
-
-  //voir pour mettre en async
-  const submit = (e) => {
+  
+ 
+  const submit = async (e) => {
     e.preventDefault();
-    dispatch(signInUser())
+ await dispatch(signInUser(userMail,password))
+  console.log(userLogin)
+  const userJwt= userLogin.body.token
+  console.log(userJwt)
+const jwt = localStorage.setItem('token', userJwt)
+    console.log(jwt)
+  const accessJwt = localStorage.getItem('token')
+  dispatch(accessProfilePage(accessJwt))  
+    
   };
 
   return (
@@ -24,7 +33,7 @@ const SignInForms = () => {
         <form onSubmit={submit}>
           <div class="input-wrapper">
             <label for="username">Username</label>
-            <input onChange={(e)=>{setUser(e.target.value)}} type="text" id="username" />
+            <input onChange={(e)=>{setUserMail(e.target.value)}} type="text" id="username" />
           </div>
           <div class="input-wrapper">
             <label for="password">Password</label>
