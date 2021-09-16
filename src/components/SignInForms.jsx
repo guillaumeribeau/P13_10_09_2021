@@ -2,10 +2,10 @@ import React from "react";
 import { useState } from "react";
 import { PersonCircle } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { accessProfilePage, signInUser } from "../actions/signIn.action";
-import Profile from "../pages/Profile";
-import signInReducer from "../reducers/signIn.reducer";
+
+
 
 const SignInForms = () => {
   const [userMail, setUserMail] = useState("");
@@ -13,23 +13,16 @@ const SignInForms = () => {
   const userLogin = useSelector((state) => state.signInReducer);
   const dispatch = useDispatch();
 
-
   const submit = async (e) => {
     e.preventDefault();
-    dispatch(signInUser(userMail, password));
-    await function () {
-      localStorage.setItem("token", userLogin);
-    };
-    const accessJwt = localStorage.getItem("token");
+    await dispatch(signInUser(userMail, password));
+      const accessJwt = localStorage.getItem("token");
     dispatch(accessProfilePage(accessJwt));
   };
-  console.log(userLogin);
-
-  
 
   return (
     <>
-      { userLogin.status === 200 && <Redirect to = "/profile" />}
+      {userLogin.status === 200 && <Redirect to="/profile" />}
       <main class="main bg-dark">
         <section class="sign-in-content">
           <PersonCircle />
