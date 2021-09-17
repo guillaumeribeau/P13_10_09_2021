@@ -1,32 +1,63 @@
-import React from 'react';
-import logo from '../assets/images/argentBankLogo.png'
-import {Link} from 'react-router-dom'
-import { PersonCircle } from 'react-bootstrap-icons'
-
+import React from "react";
+import logo from "../assets/images/argentBankLogo.png";
+import { Link } from "react-router-dom";
+import { PersonCircle, BoxArrowRight, PersonBadge } from "react-bootstrap-icons";
+import { useDispatch, useSelector } from "react-redux";
+import { accessProfilePage, signInUser } from "../actions/signIn.action";
+import { signOutUser } from "../actions/signOut.action";
 
 const Header = () => {
-    return (
-      
-        <nav class="main-nav">
-        <Link to='/'>
-          <img
-            class="main-nav-logo-image"
-            src={logo}
-            alt="Argent Bank Logo"
-          />
-        
-          <h1 class="sr-only">Argent Bank</h1>
-          </Link>
-        <div className= 'signIn-container'>
+  const userLogin = useSelector((state) => state.signInReducer);
+ const dispatch= useDispatch()
 
-          <Link to='/signIn' class="main-nav-item">
-            <PersonCircle className='icon-person'/>
-            Sign In
+const signOut =()=>{
+
+dispatch(signOutUser())
+
+
+
+
+}
+
+
+
+
+  return (
+    <nav class="main-nav">
+      <Link to="/">
+        <img class="main-nav-logo-image" src={logo} alt="Argent Bank Logo" />
+
+        <h1 class="sr-only">Argent Bank</h1>
+      </Link>
+
+      {userLogin.status === 200 ? (
+        <div className="sign-container">
+          
+            <div className='icon-container'>
+            <PersonBadge className="person-badge" />
+            <span className='user-first-name'>{userLogin.body.firstName}</span>
+            </div>
+           
+              <Link to="/" class="main-nav-item"> 
+              <div onClick={signOut} className='icon-container'>
+            <BoxArrowRight className="signOut" />
+            <span>Sign out</span>
+            </div>
+             </Link>
+         
+        </div>
+      ) : (
+        <div className="sign-container">
+          <Link to="/signIn" class="main-nav-item">
+            <div classsName='icon-container'>
+            <PersonCircle className="icon-person" />
+             <span>Sign in</span>
+            </div>
           </Link>
         </div>
-      </nav>
-   
-    );
+      )}
+    </nav>
+  );
 };
 
 export default Header;

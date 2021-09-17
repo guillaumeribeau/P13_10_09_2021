@@ -48,7 +48,7 @@ const Welcome = () => {
             >
               Save
             </button>
-            <button className="submit_edit_button">Cancel</button>
+            <button  onClick={()=> setEditName(false)} className="submit_edit_button">Cancel</button>
           </div>
 
           <form></form>
