@@ -23,13 +23,15 @@ export const signInUser = (userMail, password) => {
 
 
 
-export const accessProfilePage = (token) => {
+export const accessProfilePage = () => {
   return (dispatch) => {
+    const accessJwt = localStorage.getItem("token");
+
     return axios({
       method: "post",
       url: `http://localhost:3001/api/v1/user/profile`,
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${accessJwt}`,
       },
     })
       .then((response) => {

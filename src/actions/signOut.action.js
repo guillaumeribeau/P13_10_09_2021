@@ -1,14 +1,17 @@
+import { accessProfilePage, signInUser } from "./signIn.action";
 
 
-export const SIGNOUT_USER = "SIGNIN_USER";
+export const SIGNOUT_USER = "SIGNOUT_USER";
 
 
 export const signOutUser = () => {
   return (dispatch) => {
-     localStorage.removeItem('token')
-        dispatch({ type: SIGNOUT_USER});
+   
      
-      }
+dispatch({type: SIGNOUT_USER })
+     
+      
       
   
     }
+}

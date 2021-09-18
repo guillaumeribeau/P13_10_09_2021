@@ -13,7 +13,7 @@ export default function signInReducer(state = initialState, action) {
         case EDIT_NAME:
         return action.payload
         case SIGNOUT_USER:
-        return action.type
+       return initialState
 
     default:
       return state;

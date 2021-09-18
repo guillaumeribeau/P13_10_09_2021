@@ -7,7 +7,7 @@ import Welcome from "../components/Welcome";
 const Profile = () => {
   return (
     <div>
-      <Header />
+      <Header/>
       <main class="main bg-dark">
         <Welcome />
         <Account title="Argent Bank Checking (x8349)" amount='$2,082.79' description='Available Balance' button='View transactions' />

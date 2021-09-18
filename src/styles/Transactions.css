@@ -1,0 +1,77 @@
+.transactions_page{
+    background-color: rgb(136, 194, 196);
+}
+
+
+
+
+
+.accordion-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: rgb(136, 194, 196) 1px solid;
+  height: 60px;
+  background-color: rgb(244, 243, 243);
+  margin-right: 50px;
+  margin-left: 50px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.accordion-container-toggle{
+    border-bottom: solid 1px transparent;
+}
+
+.accordion-container >img {
+color:black;
+cursor: pointer;
+}
+.edit_dropdown{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    border:  rgb(136, 194, 196) 1px solid;
+    border-top: 1px transparent solid;
+    height: 160px;
+    background-color: rgb(244, 243, 243);
+    margin-right: 50px;
+    margin-left: 50px;
+    padding-right: 15px;
+    padding-left: 50px;
+
+}
+
+.edit > span {
+    padding-right: 5px;
+}
+
+.accordion_container{
+margin-top: 150px;
+margin-bottom: 50px;
+
+
+}
+
+.account_title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 50px;
+    margin-left: 50px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 5px;
+}
+
+.available_balance{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: rgb(136, 194, 196) 1px solid;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(244, 243, 243);
+}

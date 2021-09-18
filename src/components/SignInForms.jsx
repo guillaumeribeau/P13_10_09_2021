@@ -16,8 +16,7 @@ const SignInForms = () => {
   const submit = async (e) => {
     e.preventDefault();
     await dispatch(signInUser(userMail, password));
-      const accessJwt = localStorage.getItem("token");
-    dispatch(accessProfilePage(accessJwt));
+    dispatch(accessProfilePage());
   };
 
   return (
