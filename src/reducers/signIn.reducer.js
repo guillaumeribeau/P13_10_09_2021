@@ -1,4 +1,4 @@
-import { ACCES_PROFIL, SIGNIN_USER } from "../actions/signIn.action";
+import { ACCES_PROFIL, SIGNIN_USER, SIGNIN_ERROR } from "../actions/signIn.action";
 import { EDIT_NAME} from "../actions/editName.action";
 import { SIGNOUT_USER} from "../actions/signOut.action";
 
@@ -14,6 +14,8 @@ export default function signInReducer(state = initialState, action) {
         return action.payload
         case SIGNOUT_USER:
        return initialState
+        case SIGNIN_ERROR:
+       return action.payload
 
     default:
       return state;
