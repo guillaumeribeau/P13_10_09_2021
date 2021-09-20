@@ -11,7 +11,7 @@ const Home = () => {
       <main>
         <HeroSection />
         <Features />
-       </main> 
+      </main>
       <Footer />
     </>
   );

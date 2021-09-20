@@ -1,13 +1,12 @@
-import React, { useEffect } from "react";
 import logo from "../assets/images/argentBankLogo.png";
-import { Link, Redirect, useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import {
   PersonCircle,
   BoxArrowRight,
   PersonBadge,
 } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { accessProfilePage, signInUser } from "../actions/signIn.action";
+
 import { signOutUser } from "../actions/signOut.action";
 
 const Header = () => {

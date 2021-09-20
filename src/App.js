@@ -5,11 +5,7 @@ import Home from "./pages/Home";
 import SignIn from "./pages/Login";
 import Profile from "./pages/Profile";
 import Transactions from "./pages/Transactions";
-;
-
 function App() {
-
-
   return (
     <Router>
       <Route exact path="/" component={Home} />
@@ -17,7 +13,6 @@ function App() {
       <Route exact path="/profile" component={Profile} />
       <Route exact path="/transactions" component={Transactions} />
     </Router>
-   
   );
 }
 

@@ -3,7 +3,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color:#2c3e50;
+  color: #2c3e50;
 }
 
 body {
@@ -23,9 +23,9 @@ body {
   padding-top: 50px;
 }
 
-a{
+a {
   text-decoration: none;
-  color:#2c3e50;
+  color: #2c3e50;
 }
 
 .sr-only {
@@ -60,7 +60,6 @@ a{
 }
 
 .main-nav-item {
-  
   text-decoration: none;
   margin-right: 0.5rem;
 }
@@ -144,33 +143,30 @@ a{
   cursor: pointer;
 }
 
-.sign-container{
-  display:flex;
+.sign-container {
+  display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.icon-container{
+.icon-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-right: 15px;
 }
-.user-first-name{
+.user-first-name {
   font-weight: bold;
 }
-.signOut{
-padding-right:5px;
-
-
+.signOut {
+  padding-right: 5px;
 }
 
-.person-badge{
-padding-right:5px;
+.person-badge {
+  padding-right: 5px;
 }
 
 /*---------fin de mes modifications ------------*/
-
 
 @media (min-width: 920px) {
   .hero {

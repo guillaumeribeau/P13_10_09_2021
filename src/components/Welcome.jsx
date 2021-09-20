@@ -10,13 +10,13 @@ const Welcome = () => {
   const dispatch = useDispatch();
 
   const editUserNameWithForms = () => {
-    const dataUser={
+    const dataUser = {
       firstName: firstName,
-      lastName:lastName,
-    }
-    
+      lastName: lastName,
+    };
+
     const accessJwt = localStorage.getItem("token");
-    dispatch(editUserName(accessJwt,dataUser));
+    dispatch(editUserName(accessJwt, dataUser));
     setEditName(false);
   };
 
@@ -48,7 +48,12 @@ const Welcome = () => {
             >
               Save
             </button>
-            <button  onClick={()=> setEditName(false)} className="submit_edit_button">Cancel</button>
+            <button
+              onClick={() => setEditName(false)}
+              className="submit_edit_button"
+            >
+              Cancel
+            </button>
           </div>
 
           <form></form>
